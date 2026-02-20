@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class FirstAidSelectionScreen extends StatelessWidget {
@@ -13,38 +14,28 @@ class FirstAidSelectionScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.black),
-        centerTitle: true,
-        title: const Text(
-          "First Aid Type",
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
 
-            const Text(
-              "What is the situation?",
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
+              const Text(
+                "What is the situation?",
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
 
-            const SizedBox(height: 50),
+              const SizedBox(height: 50),
 
-            Row(
-              children: [
+              Row(
+                children: [
 
-                // UNCONSCIOUS
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {},
+                  Expanded(
                     child: Container(
                       height: 150,
                       margin: const EdgeInsets.only(right: 10),
@@ -56,8 +47,7 @@ class FirstAidSelectionScreen extends StatelessWidget {
                         ),
                       ),
                       child: const Column(
-                        mainAxisAlignment:
-                            MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(Icons.airline_seat_flat,
                               size: 50,
@@ -75,12 +65,8 @@ class FirstAidSelectionScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
 
-                // TRAUMA
-                Expanded(
-                  child: GestureDetector(
-                    onTap: () {},
+                  Expanded(
                     child: Container(
                       height: 150,
                       margin: const EdgeInsets.only(left: 10),
@@ -89,8 +75,7 @@ class FirstAidSelectionScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: const Column(
-                        mainAxisAlignment:
-                            MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Icon(Icons.healing,
                               size: 50,
@@ -108,10 +93,11 @@ class FirstAidSelectionScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          ],
+
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

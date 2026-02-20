@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'first_aid_screen.dart';
 
 class EmergencyDecisionScreen extends StatelessWidget {
   const EmergencyDecisionScreen({super.key});
 
-  static const Color primaryRed = Color(0xFFD32F2F); // Same strong medical red
+  static const Color primaryRed = Color(0xFFD32F2F);
 
   Future<void> _callEmergency() async {
     final Uri callUri = Uri(scheme: 'tel', path: '112');
@@ -87,7 +88,12 @@ class EmergencyDecisionScreen extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    // Navigate to first aid flow later
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const FirstAidScreen(),
+                      ),
+                    );
                   },
                   icon: const Icon(Icons.medical_services, color: primaryRed),
                   label: const Text(
